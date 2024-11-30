@@ -1,0 +1,11 @@
+services:
+  db:
+    image: postgres
+    restart: always
+    container_name: db_test
+    environment:
+      - POSTGRES_PASSWORD=${DB_PASS}
+      - POSTGRES_USER=${DB_USER}
+      - POSTGRES_DB=${DB_NAME}
+    ports:
+      - "${DB_PORT}:${DB_PORT}"
